@@ -1,8 +1,44 @@
 from my_app.ss_lib.Ssheet_class import Ssheet
+from my_app.ss_lib.smartsheet_basic_functions import *
 from my_app.func_lib.push_list_to_xls import push_list_to_xls
 from my_app.func_lib.push_xls_to_ss import push_xls_to_ss
+from my_app.func_lib.push_list_to_ss import push_list_to_ss
 from my_app.sheet_map import sheet_map
 import time
+
+new_sheet = Ssheet('test fri 13th')
+my_list = [['jim', 'stan', 'ang', 'blanche'], ['chris', 'ang', 'amanda']]
+
+if new_sheet.id == -1:
+    new_sheet.create_sheet('test fri 13th', sheet_map)
+    print('Created', new_sheet.id)
+else:
+    print('Found', new_sheet.id)
+
+
+push_list_to_ss(my_list, new_sheet)
+# time.sleep(2)
+# new_sheet.delete_sheet()
+print(new_sheet.id)
+
+exit()
+
+
+
+push_list_to_ss(my_list,new_sheet)
+
+# ws_name = 'Tetration Customer Adoption Workspace'
+# ws_id = ss_get_ws(new_sheet.ss, ws_name)
+
+# print(ss_get_sheet(new_sheet.ss, 'Tetration Adoption Reference Data')['id'])
+# print('workspace', ws_id)
+# exit()
+# folder_name = 'Tetration Adoption Reference Data'
+# print('folders', ss_get_folder_id(new_sheet.ss, folder_name ))
+#print(ws_id)
+
+
+
 
 
 # Get the SmartSheets we need

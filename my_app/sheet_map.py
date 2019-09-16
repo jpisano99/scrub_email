@@ -3,6 +3,9 @@
 #               {'title': 'End Customer Ultimate Name', 'type': 'TEXT_NUMBER'},
 #               {'title': 'col1', 'type': 'CHECKBOX', 'symbol': 'STAR'}]
 
+# my_rows is a list of rows to be added
+# { [{"strict": false, "columnId": 1, "value": "jim"}] }
+
 sheet_map = [{'primary': True, 'title': 'Bill To ID', 'type': 'TEXT_NUMBER'},
              {'title': 'Partner Account Name', 'type': 'TEXT_NUMBER'},
              {'title': 'End Customer Name', 'type': 'TEXT_NUMBER'},

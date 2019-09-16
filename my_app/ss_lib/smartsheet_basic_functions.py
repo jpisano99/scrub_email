@@ -73,10 +73,19 @@ def ss_get_ws(ss, ws_name):
 
     workspace_info_dict = {}
     for workspace in workspaces:
+
         if workspace.name == ws_name:
+
             workspace_info_dict.update(workspace.to_dict())
     return workspace_info_dict
 
+
+def ss_get_ws_folder_id(ss, ws_id):
+    response = ss.Workspaces.list_folders(ws_id, include_all=True)
+    folders = response.data
+    for folder in folders:
+        print(folder.name)
+    return folders
 
 def ss_move_sheet(ss, id, dest_id):
     sheet = ss.Sheets.move_sheet(id,
